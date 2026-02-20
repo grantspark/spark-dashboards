@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Campaign Reporting — Spark",
   description: "Your growth at a glance.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
