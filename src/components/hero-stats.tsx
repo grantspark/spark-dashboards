@@ -17,7 +17,7 @@ export function HeroStats({
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
       {/* Main hero stat */}
-      <div className="md:col-span-3 rounded-2xl border border-card-border p-8 text-center bg-accent-tint/30">
+      <div className="md:col-span-3 card p-8 text-center">
         <p className="text-muted text-sm uppercase tracking-widest mb-2">
           People introduced to your business
         </p>
@@ -28,7 +28,7 @@ export function HeroStats({
       </div>
 
       {/* Secondary stats */}
-      <div className="rounded-2xl border border-card-border p-6 text-center">
+      <div className="card p-6 text-center">
         <p className="text-muted text-xs uppercase tracking-widest mb-1">
           Weeks Partnered
         </p>
@@ -37,7 +37,7 @@ export function HeroStats({
         </p>
       </div>
 
-      <div className="rounded-2xl border border-card-border p-6 text-center">
+      <div className="card p-6 text-center">
         <p className="text-muted text-xs uppercase tracking-widest mb-1">
           Active Campaigns
         </p>
@@ -46,7 +46,7 @@ export function HeroStats({
         </p>
       </div>
 
-      <div className="rounded-2xl border border-card-border p-6 text-center">
+      <div className="card p-6 text-center">
         <p className="text-muted text-xs uppercase tracking-widest mb-1">
           Total Clicks
         </p>

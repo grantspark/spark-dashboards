@@ -25,7 +25,7 @@ export function ReachTrend({ data }: ReachTrendProps) {
   }));
 
   return (
-    <div className="rounded-2xl border border-card-border p-6 mb-10">
+    <div className="card p-6 mb-10">
       <h2 className="text-sm uppercase tracking-widest text-muted mb-4">
         30-Day Reach Trend
       </h2>

@@ -16,7 +16,7 @@ export function ReachBreakdown({
   const organicPct = 100 - paidPct;
 
   return (
-    <div className="rounded-2xl border border-card-border p-6 mb-10">
+    <div className="card p-6 mb-10">
       <h2 className="text-sm uppercase tracking-widest text-muted mb-4">
         Reach Breakdown
       </h2>

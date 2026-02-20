@@ -16,8 +16,10 @@ export default function Home() {
         </div>
 
         {/* Dashboard preview card */}
-        <div className="rounded-2xl border border-card-border p-1 mb-10 shadow-xl bg-accent-tint/30">
-          <div className="rounded-xl bg-white border border-card-border p-8">
+        <div className="card p-8 mb-10 shadow-xl">
+            <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-4">
+              Example Campaign Reporting
+            </p>
             <p className="text-muted text-xs uppercase tracking-widest mb-2">
               People introduced to your business
             </p>
@@ -39,10 +41,6 @@ export default function Home() {
                 <p className="text-2xl font-bold text-foreground">1,893</p>
               </div>
             </div>
-          </div>
-          <p className="text-xs text-muted mt-3 mb-1 italic">
-            Sample client dashboard
-          </p>
         </div>
 
         {/* CTA */}

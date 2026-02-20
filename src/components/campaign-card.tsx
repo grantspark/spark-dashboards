@@ -19,7 +19,7 @@ const statusBadge = {
 
 export function CampaignCard({ campaign }: CampaignCardProps) {
   return (
-    <div className="rounded-2xl border border-card-border p-5 hover:shadow-md transition-shadow">
+    <div className="card p-5 hover:shadow-md transition-shadow">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div
