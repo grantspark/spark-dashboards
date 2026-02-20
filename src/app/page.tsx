@@ -7,7 +7,7 @@ export default function Home() {
           <p className="text-sm font-medium uppercase tracking-widest text-muted mb-3">
             More leads. Less stress.
           </p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold mb-3">
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">
             <span className="gradient-text">Spark</span> Campaign Reporting
           </h1>
           <p className="text-muted text-base max-w-md mx-auto">
@@ -21,7 +21,7 @@ export default function Home() {
             <p className="text-muted text-xs uppercase tracking-widest mb-2">
               People introduced to your business
             </p>
-            <p className="font-display text-5xl md:text-6xl font-bold gradient-text mb-1">
+            <p className="text-5xl md:text-6xl font-bold gradient-text mb-1">
               14,832
             </p>
             <p className="text-muted text-xs mb-8">in the last 30 days</p>
@@ -50,7 +50,7 @@ export default function Home() {
           href="https://sparkmysite.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-8 py-3 rounded-full gradient-bg text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg"
+          className="btn"
         >
           Visit sparkmysite.com
         </a>

@@ -63,7 +63,7 @@ export default async function ClientDashboard({
             <span className="gradient-text">{client.initials}</span>
           </div>
           <div>
-            <h1 className="font-display text-2xl font-bold">{client.name}</h1>
+            <h1 className="text-2xl font-bold">{client.name}</h1>
             <p className="text-sm text-muted">Your growth at a glance</p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default async function ClientDashboard({
           href="https://calendar.app.google/gKhtXBLgcKka9h3b8"
           target="_blank"
           rel="noopener noreferrer"
-          className="gradient-bg text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-md shrink-0"
+          className="btn shrink-0"
         >
           Book a Call
         </a>

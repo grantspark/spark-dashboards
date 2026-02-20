@@ -21,7 +21,7 @@ export function HeroStats({
         <p className="text-muted text-sm uppercase tracking-widest mb-2">
           People introduced to your business
         </p>
-        <p className="font-display text-6xl md:text-7xl font-bold tracking-tight gradient-text">
+        <p className="text-6xl md:text-7xl font-bold tracking-tight gradient-text">
           {formatNumber(totalReach)}
         </p>
         <p className="text-muted text-sm mt-2">in the last 30 days</p>
@@ -32,7 +32,7 @@ export function HeroStats({
         <p className="text-muted text-xs uppercase tracking-widest mb-1">
           Weeks Partnered
         </p>
-        <p className="font-display text-3xl font-bold text-foreground">
+        <p className="text-3xl font-bold text-foreground">
           {weeksPartnered}
         </p>
       </div>
@@ -41,7 +41,7 @@ export function HeroStats({
         <p className="text-muted text-xs uppercase tracking-widest mb-1">
           Active Campaigns
         </p>
-        <p className="font-display text-3xl font-bold text-foreground">
+        <p className="text-3xl font-bold text-foreground">
           {activeCampaigns}
         </p>
       </div>
@@ -50,7 +50,7 @@ export function HeroStats({
         <p className="text-muted text-xs uppercase tracking-widest mb-1">
           Total Clicks
         </p>
-        <p className="font-display text-3xl font-bold text-foreground">
+        <p className="text-3xl font-bold text-foreground">
           {formatNumber(totalClicks)}
         </p>
       </div>
