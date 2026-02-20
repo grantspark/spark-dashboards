@@ -1,0 +1,67 @@
+{
+  "lastSync": "2026-02-20T10:00:00Z",
+  "summary": {
+    "totalReach": 8135,
+    "paidReach": 8135,
+    "organicReach": 0,
+    "totalSpend": 231.38,
+    "totalClicks": 569,
+    "avgCtr": 3.19
+  },
+  "trend": [
+    { "date": "2026-01-21", "reach": 265 },
+    { "date": "2026-01-22", "reach": 208 },
+    { "date": "2026-01-23", "reach": 235 },
+    { "date": "2026-01-24", "reach": 224 },
+    { "date": "2026-01-25", "reach": 263 },
+    { "date": "2026-01-26", "reach": 196 },
+    { "date": "2026-01-27", "reach": 173 },
+    { "date": "2026-01-28", "reach": 170 },
+    { "date": "2026-01-29", "reach": 126 },
+    { "date": "2026-01-30", "reach": 136 },
+    { "date": "2026-01-31", "reach": 128 },
+    { "date": "2026-02-01", "reach": 176 },
+    { "date": "2026-02-02", "reach": 156 },
+    { "date": "2026-02-03", "reach": 141 },
+    { "date": "2026-02-04", "reach": 126 },
+    { "date": "2026-02-05", "reach": 126 },
+    { "date": "2026-02-06", "reach": 141 },
+    { "date": "2026-02-07", "reach": 92 },
+    { "date": "2026-02-08", "reach": 183 },
+    { "date": "2026-02-09", "reach": 158 },
+    { "date": "2026-02-10", "reach": 159 },
+    { "date": "2026-02-11", "reach": 154 },
+    { "date": "2026-02-12", "reach": 151 },
+    { "date": "2026-02-13", "reach": 1209 },
+    { "date": "2026-02-14", "reach": 1528 },
+    { "date": "2026-02-15", "reach": 1440 },
+    { "date": "2026-02-16", "reach": 1258 },
+    { "date": "2026-02-17", "reach": 1303 },
+    { "date": "2026-02-18", "reach": 1277 },
+    { "date": "2026-02-19", "reach": 1211 }
+  ],
+  "campaigns": [
+    {
+      "name": "Brand Awareness \u2014 180 Day",
+      "status": "active",
+      "health": "good",
+      "metrics": {
+        "spend": 65.62,
+        "reach": 6872,
+        "clicks": 479,
+        "ctr": 5.6
+      }
+    },
+    {
+      "name": "DPA \u2014 Retargeting",
+      "status": "active",
+      "health": "good",
+      "metrics": {
+        "spend": 165.76,
+        "reach": 1309,
+        "clicks": 90,
+        "ctr": 0.97
+      }
+    }
+  ]
+}

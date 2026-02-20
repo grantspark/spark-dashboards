@@ -11,6 +11,17 @@
     "active": true
   },
   {
+    "slug": "humarian",
+    "name": "Humarian (Probonix)",
+    "initials": "H",
+    "accentColor": "#3B82F6",
+    "adAccountId": "act_337218486645475",
+    "pageId": null,
+    "partnerSince": "2021-06-01",
+    "services": ["facebook-ads"],
+    "active": true
+  },
+  {
     "slug": "golden-goose-demo",
     "name": "The Golden Goose",
     "initials": "GG",
