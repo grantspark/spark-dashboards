@@ -22,14 +22,12 @@ export function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // We need to resolve this synchronously for metadata, but Next.js 15+ requires async params
-  // Using a wrapper approach
   return params.then(({ slug }) => {
     const client = getClientBySlug(slug);
     return {
       title: client
-        ? `${client.name} — Dashboard`
-        : "Dashboard — Spark Sites",
+        ? `${client.name} — Campaign Dashboard`
+        : "Campaign Dashboard — Spark",
     };
   });
 }
@@ -56,21 +54,27 @@ export default async function ClientDashboard({
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
-      {/* Header */}
-      <div className="flex items-center gap-4 mb-10">
-        <div
-          className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold shrink-0"
-          style={{
-            backgroundColor: client.accentColor + "20",
-            color: client.accentColor,
-          }}
+      {/* Header with Book a Call */}
+      <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center gap-4">
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold shrink-0 bg-accent-tint"
+          >
+            <span className="gradient-text">{client.initials}</span>
+          </div>
+          <div>
+            <h1 className="font-display text-2xl font-bold">{client.name}</h1>
+            <p className="text-sm text-muted">Your growth at a glance</p>
+          </div>
+        </div>
+        <a
+          href="https://calendar.app.google/gKhtXBLgcKka9h3b8"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="gradient-bg text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-md shrink-0"
         >
-          {client.initials}
-        </div>
-        <div>
-          <h1 className="text-2xl font-bold">{client.name}</h1>
-          <p className="text-sm text-muted">Your growth at a glance</p>
-        </div>
+          Book a Call
+        </a>
       </div>
 
       {/* Hero Stats */}
@@ -131,27 +135,6 @@ export default async function ClientDashboard({
         </section>
       )}
 
-      {/* Quick Actions */}
-      <div className="flex flex-wrap gap-3 mb-10">
-        <a
-          href="https://startwithspark.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 rounded-full text-sm font-medium border border-card-border hover:border-accent transition-colors"
-          style={{ color: client.accentColor }}
-        >
-          Book a Call
-        </a>
-        <a
-          href="https://startwithspark.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 rounded-full text-sm font-medium border border-card-border hover:border-accent transition-colors text-muted hover:text-foreground"
-        >
-          Request Changes
-        </a>
-      </div>
-
       {/* Metric Legend */}
       <MetricLegend />
 
@@ -163,12 +146,12 @@ export default async function ClientDashboard({
         <p className="text-xs text-muted">
           Powered by{" "}
           <a
-            href="https://startwithspark.com"
+            href="https://sparkmysite.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-spark-teal hover:underline"
+            className="gradient-text font-medium hover:underline"
           >
-            Spark Sites
+            Spark
           </a>
         </p>
       </footer>

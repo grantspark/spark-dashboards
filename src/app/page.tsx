@@ -1,56 +1,62 @@
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-4">
+    <main className="min-h-screen flex flex-col items-center justify-center px-4 py-16">
       <div className="max-w-2xl text-center">
         {/* Spark branding */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">
-            <span className="text-spark-teal">Spark</span> Client Reporting
+        <div className="mb-10">
+          <p className="text-sm font-medium uppercase tracking-widest text-muted mb-3">
+            More leads. Less stress.
+          </p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold mb-3">
+            <span className="gradient-text">Spark</span> Campaign Reporting
           </h1>
-          <p className="text-muted text-sm">
+          <p className="text-muted text-base max-w-md mx-auto">
             Real-time growth metrics for our partners
           </p>
         </div>
 
-        {/* Screenshot placeholder */}
-        <div className="rounded-2xl bg-card border border-card-border p-6 mb-8 shadow-2xl">
-          <div className="rounded-xl bg-background border border-card-border p-8">
-            {/* Mock dashboard preview */}
+        {/* Dashboard preview card */}
+        <div className="rounded-2xl border border-card-border p-1 mb-10 shadow-xl bg-accent-tint/30">
+          <div className="rounded-xl bg-white border border-card-border p-8">
             <p className="text-muted text-xs uppercase tracking-widest mb-2">
               People introduced to your business
             </p>
-            <p className="text-5xl font-bold text-accent mb-1">14,832</p>
-            <p className="text-muted text-xs mb-6">in the last 30 days</p>
-            <div className="grid grid-cols-3 gap-4">
+            <p className="font-display text-5xl md:text-6xl font-bold gradient-text mb-1">
+              14,832
+            </p>
+            <p className="text-muted text-xs mb-8">in the last 30 days</p>
+            <div className="grid grid-cols-3 gap-6">
               <div>
-                <p className="text-xs text-muted">Weeks Partnered</p>
-                <p className="text-xl font-bold text-accent">12</p>
+                <p className="text-xs text-muted mb-1">Weeks Partnered</p>
+                <p className="text-2xl font-bold text-foreground">12</p>
               </div>
               <div>
-                <p className="text-xs text-muted">Active Campaigns</p>
-                <p className="text-xl font-bold text-accent">4</p>
+                <p className="text-xs text-muted mb-1">Active Campaigns</p>
+                <p className="text-2xl font-bold text-foreground">4</p>
               </div>
               <div>
-                <p className="text-xs text-muted">Total Clicks</p>
-                <p className="text-xl font-bold text-accent">1,893</p>
+                <p className="text-xs text-muted mb-1">Total Clicks</p>
+                <p className="text-2xl font-bold text-foreground">1,893</p>
               </div>
             </div>
           </div>
-          <p className="text-xs text-muted mt-4 italic">
+          <p className="text-xs text-muted mt-3 mb-1 italic">
             Sample client dashboard
           </p>
         </div>
 
         {/* CTA */}
         <a
-          href="https://startwithspark.com"
-          className="inline-block px-6 py-3 rounded-full bg-spark-teal text-background font-semibold text-sm hover:opacity-90 transition-opacity"
+          href="https://sparkmysite.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-8 py-3 rounded-full gradient-bg text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg"
         >
-          Learn more at startwithspark.com
+          Visit sparkmysite.com
         </a>
 
-        <p className="text-xs text-muted mt-8">
-          Spark Sites — Educate, Empower, Encourage
+        <p className="text-xs text-muted mt-10">
+          Spark — Educate, Empower, Encourage
         </p>
       </div>
     </main>

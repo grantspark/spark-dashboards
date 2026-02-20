@@ -15,7 +15,7 @@ interface ReachTrendProps {
   accentColor: string;
 }
 
-export function ReachTrend({ data, accentColor }: ReachTrendProps) {
+export function ReachTrend({ data }: ReachTrendProps) {
   const formatted = data.map((d) => ({
     ...d,
     label: new Date(d.date).toLocaleDateString("en-US", {
@@ -25,7 +25,7 @@ export function ReachTrend({ data, accentColor }: ReachTrendProps) {
   }));
 
   return (
-    <div className="rounded-2xl bg-card border border-card-border p-6 mb-10">
+    <div className="rounded-2xl border border-card-border p-6 mb-10">
       <h2 className="text-sm uppercase tracking-widest text-muted mb-4">
         30-Day Reach Trend
       </h2>
@@ -34,8 +34,8 @@ export function ReachTrend({ data, accentColor }: ReachTrendProps) {
           <AreaChart data={formatted}>
             <defs>
               <linearGradient id="reachGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor={accentColor} stopOpacity={0.3} />
-                <stop offset="100%" stopColor={accentColor} stopOpacity={0} />
+                <stop offset="0%" stopColor="#FF6B47" stopOpacity={0.2} />
+                <stop offset="100%" stopColor="#E91E8C" stopOpacity={0} />
               </linearGradient>
             </defs>
             <XAxis
@@ -53,18 +53,19 @@ export function ReachTrend({ data, accentColor }: ReachTrendProps) {
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "#111827",
-                border: "1px solid #1E293B",
+                backgroundColor: "#FFFFFF",
+                border: "1px solid #E8E5DF",
                 borderRadius: "8px",
-                color: "#E8ECF1",
+                color: "#1C1C1C",
                 fontSize: "13px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
               }}
               labelStyle={{ color: "#6B7280" }}
             />
             <Area
               type="monotone"
               dataKey="reach"
-              stroke={accentColor}
+              stroke="#E91E8C"
               strokeWidth={2}
               fill="url(#reachGradient)"
             />

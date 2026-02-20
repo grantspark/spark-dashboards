@@ -13,13 +13,13 @@ const healthColors = {
 };
 
 const statusBadge = {
-  active: "bg-health-good/20 text-health-good",
-  ended: "bg-muted/20 text-muted",
+  active: "bg-green-50 text-health-good border border-green-200",
+  ended: "bg-gray-50 text-muted border border-card-border",
 };
 
-export function CampaignCard({ campaign, accentColor }: CampaignCardProps) {
+export function CampaignCard({ campaign }: CampaignCardProps) {
   return (
-    <div className="rounded-2xl bg-card border border-card-border p-5">
+    <div className="rounded-2xl border border-card-border p-5 hover:shadow-md transition-shadow">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div
@@ -28,7 +28,7 @@ export function CampaignCard({ campaign, accentColor }: CampaignCardProps) {
           <h3 className="font-semibold text-sm">{campaign.name}</h3>
         </div>
         <span
-          className={`text-xs px-2 py-0.5 rounded-full font-medium ${statusBadge[campaign.status]}`}
+          className={`text-xs px-2.5 py-0.5 rounded-full font-medium ${statusBadge[campaign.status]}`}
         >
           {campaign.status === "active" ? "Live" : "Ended"}
         </span>
@@ -36,8 +36,8 @@ export function CampaignCard({ campaign, accentColor }: CampaignCardProps) {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div>
-          <p className="text-xs text-muted mb-0.5">Spend</p>
-          <p className="font-semibold" style={{ color: accentColor }}>
+          <p className="text-xs text-muted mb-0.5">Lifetime Spend</p>
+          <p className="font-semibold gradient-text">
             {formatCurrency(campaign.metrics.spend)}
           </p>
         </div>
