@@ -1,0 +1,13 @@
+[
+  {
+    "slug": "golden-goose-demo",
+    "name": "The Golden Goose",
+    "initials": "GG",
+    "accentColor": "#D4A843",
+    "adAccountId": null,
+    "pageId": null,
+    "partnerSince": "2025-12-01",
+    "services": ["facebook-ads", "organic"],
+    "active": true
+  }
+]
