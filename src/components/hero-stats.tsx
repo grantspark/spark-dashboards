@@ -4,6 +4,7 @@ interface HeroStatsProps {
   totalReach: number;
   weeksPartnered: number;
   activeCampaigns: number;
+  totalClicks: number;
   accentColor: string;
 }
 
@@ -11,6 +12,7 @@ export function HeroStats({
   totalReach,
   weeksPartnered,
   activeCampaigns,
+  totalClicks,
   accentColor,
 }: HeroStatsProps) {
   return (
@@ -53,9 +55,7 @@ export function HeroStats({
           Total Clicks
         </p>
         <p className="text-3xl font-bold" style={{ color: accentColor }}>
-          {formatNumber(
-            Math.round(totalReach * 0.128)
-          )}
+          {formatNumber(totalClicks)}
         </p>
       </div>
     </div>

@@ -1,0 +1,56 @@
+{
+  "lastSync": "2026-02-20T09:45:00Z",
+  "summary": {
+    "totalReach": 18101,
+    "paidReach": 18101,
+    "organicReach": 0,
+    "totalSpend": 505.79,
+    "totalClicks": 536,
+    "avgCtr": 0.96
+  },
+  "trend": [
+    { "date": "2026-01-21", "reach": 1223 },
+    { "date": "2026-01-22", "reach": 910 },
+    { "date": "2026-01-23", "reach": 1005 },
+    { "date": "2026-01-24", "reach": 1134 },
+    { "date": "2026-01-25", "reach": 1628 },
+    { "date": "2026-01-26", "reach": 1362 },
+    { "date": "2026-01-27", "reach": 1569 },
+    { "date": "2026-01-28", "reach": 1725 },
+    { "date": "2026-01-29", "reach": 1140 },
+    { "date": "2026-01-30", "reach": 1501 },
+    { "date": "2026-01-31", "reach": 1894 },
+    { "date": "2026-02-01", "reach": 2195 },
+    { "date": "2026-02-02", "reach": 1803 },
+    { "date": "2026-02-03", "reach": 1056 },
+    { "date": "2026-02-04", "reach": 1297 },
+    { "date": "2026-02-05", "reach": 1372 },
+    { "date": "2026-02-06", "reach": 964 },
+    { "date": "2026-02-07", "reach": 1161 },
+    { "date": "2026-02-08", "reach": 1493 },
+    { "date": "2026-02-09", "reach": 1382 },
+    { "date": "2026-02-10", "reach": 1378 },
+    { "date": "2026-02-11", "reach": 982 },
+    { "date": "2026-02-12", "reach": 1497 },
+    { "date": "2026-02-13", "reach": 1541 },
+    { "date": "2026-02-14", "reach": 1124 },
+    { "date": "2026-02-15", "reach": 1489 },
+    { "date": "2026-02-16", "reach": 1462 },
+    { "date": "2026-02-17", "reach": 1735 },
+    { "date": "2026-02-18", "reach": 1934 },
+    { "date": "2026-02-19", "reach": 2465 }
+  ],
+  "campaigns": [
+    {
+      "name": "reDiscovery \u2014 Retargeting 180 \u2014 Central FL",
+      "status": "active",
+      "health": "good",
+      "metrics": {
+        "spend": 505.79,
+        "reach": 18101,
+        "clicks": 536,
+        "ctr": 0.96
+      }
+    }
+  ]
+}

@@ -1,5 +1,16 @@
 [
   {
+    "slug": "superior-spray-cfl",
+    "name": "Superior Spray Service",
+    "initials": "SS",
+    "accentColor": "#22C55E",
+    "adAccountId": "act_751457483444702",
+    "pageId": null,
+    "partnerSince": "2024-05-01",
+    "services": ["facebook-ads"],
+    "active": true
+  },
+  {
     "slug": "golden-goose-demo",
     "name": "The Golden Goose",
     "initials": "GG",

@@ -78,6 +78,7 @@ export default async function ClientDashboard({
         totalReach={metrics.summary.totalReach}
         weeksPartnered={weeksPartnered}
         activeCampaigns={activeCampaigns.length}
+        totalClicks={metrics.summary.totalClicks}
         accentColor={client.accentColor}
       />
 
