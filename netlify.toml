@@ -2,9 +2,12 @@
   command = "pnpm build"
   publish = "out"
 
-# Serve pre-rendered pages first; only fall back to index.html for unknown paths
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
+# Static export — every route has its own HTML file.
+# Netlify auto-serves 404.html for missing paths.
+# No SPA fallback needed; the /* rewrite was shadowing /ops/ with /index.html.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
