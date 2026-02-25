@@ -48,8 +48,9 @@ const SHEET_ID = "1-GH8qoPhvvw-2HdzdSuPTGdcJoBLs8llNuZ7oWQKWUw";
 const REFRESH_INTERVAL = 60_000; // 60 seconds
 
 // Google Visualization API endpoint — works for any sheet shared with "anyone with link"
+// &headers=1 tells gviz to treat row 1 as column headers (not data)
 function sheetUrl(tab: string): string {
-  return `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(tab)}`;
+  return `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&headers=1&sheet=${encodeURIComponent(tab)}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -68,26 +69,41 @@ function cellVal(cell: { v: string | number | null } | null): string {
   return String(cell.v);
 }
 
+/** Parse a numeric value, stripping $, commas, and % signs first. Returns 0 for non-numeric. */
+function parseNum(val: string | number | null | undefined): number {
+  if (val === null || val === undefined || val === "") return 0;
+  const cleaned = String(val).replace(/[$,%]/g, "").trim();
+  const n = Number(cleaned);
+  return isNaN(n) ? 0 : n;
+}
+
 async function fetchTab<T>(tab: string, mapper: (headers: string[], row: (string | number | null)[]) => T): Promise<T[]> {
   const res = await fetch(sheetUrl(tab), { cache: "no-store" });
   const text = await res.text();
   const table = parseGvizJson(text);
   const headers = table.cols.map((c) => c.label);
-  return table.rows.map((r) => {
-    const values = r.c.map(cellVal);
-    return mapper(headers, values);
-  });
+  return table.rows
+    .map((r) => {
+      const values = r.c.map(cellVal);
+      return { values, mapped: mapper(headers, values) };
+    })
+    // Defensive: skip rows whose first cell exactly matches the first header (header row leaked into data)
+    .filter(({ values }) => {
+      if (headers.length > 0 && headers[0] && values[0] === headers[0]) return false;
+      return true;
+    })
+    .map(({ mapped }) => mapped);
 }
 
 async function fetchDailyPlan(): Promise<DailyTask[]> {
   return fetchTab("DailyPlan", (_h, r) => ({
     date: r[0] as string,
-    rank: Number(r[1]),
+    rank: parseNum(r[1]),
     category: r[2] as string,
     task: r[3] as string,
     entity: r[4] as string,
-    estimateMin: Number(r[5]),
-    status: (r[6] as string).toLowerCase() as DailyTask["status"],
+    estimateMin: parseNum(r[5]),
+    status: ((r[6] as string) || "pending").toLowerCase() as DailyTask["status"],
     completedAt: r[7] as string,
   }));
 }
@@ -95,10 +111,10 @@ async function fetchDailyPlan(): Promise<DailyTask[]> {
 async function fetchRevenue(): Promise<RevenueRow[]> {
   return fetchTab("Revenue", (_h, r) => ({
     month: r[0] as string,
-    mrr: Number(r[1]),
-    target: Number(r[2]),
-    marginPct: Number(r[3]),
-    ccDebt: Number(r[4]),
+    mrr: parseNum(r[1]),
+    target: parseNum(r[2]),
+    marginPct: parseNum(r[3]),
+    ccDebt: parseNum(r[4]),
     lastUpdated: r[5] as string,
   }));
 }
@@ -107,7 +123,7 @@ async function fetchOverdue(): Promise<OverdueTask[]> {
   return fetchTab("Overdue", (_h, r) => ({
     taskId: r[0] as string,
     taskName: r[1] as string,
-    daysOverdue: Number(r[2]),
+    daysOverdue: parseNum(r[2]),
     entity: r[3] as string,
     url: r[4] as string,
     lastSynced: r[5] as string,
@@ -400,7 +416,7 @@ export default function OpsPage() {
       ]);
       setDailyPlan(dp);
       setRevenue(rev[0] || null);
-      setOverdue(od.filter((t) => t.taskId)); // filter empty rows
+      setOverdue(od.filter((t) => t.taskId && t.taskId !== "task_id")); // filter empty rows and leaked headers
       setConfig(cfg);
       setLastRefresh(new Date());
       setError(null);
