@@ -2,7 +2,9 @@
   command = "pnpm build"
   publish = "out"
 
+# Serve pre-rendered pages first; only fall back to index.html for unknown paths
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
