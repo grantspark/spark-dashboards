@@ -66,7 +66,16 @@ function parseGvizJson(raw: string): { cols: { label: string }[]; rows: { c: ({ 
 
 function cellVal(cell: { v: string | number | null } | null): string {
   if (!cell || cell.v === null || cell.v === undefined) return "";
-  return String(cell.v);
+  const s = String(cell.v);
+  // Handle gviz Date format: "Date(YYYY,M,D)" where M is 0-indexed
+  const dateMatch = s.match(/^Date\((\d+),(\d+),(\d+)\)$/);
+  if (dateMatch) {
+    const y = dateMatch[1];
+    const m = String(Number(dateMatch[2]) + 1).padStart(2, "0");
+    const d = dateMatch[3].padStart(2, "0");
+    return `${y}-${m}-${d}`;
+  }
+  return s;
 }
 
 /** Parse a numeric value, stripping $, commas, and % signs first. Returns 0 for non-numeric. */
@@ -147,13 +156,19 @@ function formatCurrency(n: number): string {
 
 function todayISO(): string {
   const d = new Date();
-  return d.toISOString().slice(0, 10);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
 }
 
 function yesterdayISO(): string {
   const d = new Date();
   d.setDate(d.getDate() - 1);
-  return d.toISOString().slice(0, 10);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
 }
 
 function formatTime(iso: string): string {
@@ -308,7 +323,7 @@ function RevenueCard({ revenue, config }: { revenue: RevenueRow | null; config: 
 }
 
 function OverdueCard({ overdue }: { overdue: OverdueTask[] }) {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
   const count = overdue.length;
   const badgeColor = count > 0 ? "#EF4444" : "#22C55E";
   const badgeBg = count > 0 ? "rgba(239,68,68,0.15)" : "rgba(34,197,94,0.15)";
